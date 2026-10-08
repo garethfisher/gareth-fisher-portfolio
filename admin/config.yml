@@ -2,6 +2,7 @@ backend:
   name: github
   repo: garethfisher/gareth-fisher-portfolio
   branch: main
+  base_url: https://gareth-fisher-cms-oauth.garethfisher.workers.dev
 
 media_folder: "brand_assets"
 public_folder: "/brand_assets"
