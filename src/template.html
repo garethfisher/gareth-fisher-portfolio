@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{seo.title}}</title>
+<meta name="description" content="{{seo.description}}">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink: { DEFAULT: '#0F0E12', 2: '#19171D', 3: '#242129' },
+          paper: '#F6F1E7',
+          bone: '#EDE7DA',
+          rust: { DEFAULT: '#C85A2E', dim: '#9C4523', light: '#E08256' },
+          gold: '#D9A24B',
+        },
+        fontFamily: {
+          display: ['"Fraunces"', 'serif'],
+          sans: ['"Inter"', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  * { -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: #0F0E12;
+    color: #F6F1E7;
+    font-family: 'Inter', sans-serif;
+  }
+
+  ::selection { background: #C85A2E; color: #0F0E12; }
+
+  /* grain overlay */
+  .grain {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+  }
+
+  /* layered radial gradients */
+  .hero-field {
+    background:
+      radial-gradient(60% 50% at 15% 10%, rgba(200,90,46,0.22), transparent 60%),
+      radial-gradient(45% 40% at 90% 15%, rgba(217,162,75,0.14), transparent 60%),
+      radial-gradient(70% 60% at 50% 100%, rgba(200,90,46,0.10), transparent 65%),
+      #0F0E12;
+  }
+
+  .section-field {
+    background:
+      radial-gradient(50% 40% at 85% 0%, rgba(200,90,46,0.08), transparent 60%),
+      #0F0E12;
+  }
+
+  /* layered, color-tinted shadows */
+  .shadow-elevated {
+    box-shadow:
+      0 1px 1px rgba(0,0,0,0.24),
+      0 8px 20px -8px rgba(200,90,46,0.28),
+      0 30px 50px -24px rgba(0,0,0,0.55);
+  }
+  .shadow-floating {
+    box-shadow:
+      0 2px 4px rgba(0,0,0,0.3),
+      0 16px 32px -12px rgba(200,90,46,0.35),
+      0 40px 70px -20px rgba(0,0,0,0.6);
+  }
+  .shadow-soft {
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.2),
+      0 6px 16px -8px rgba(0,0,0,0.4);
+  }
+
+  /* nav glass */
+  .nav-glass {
+    background: rgba(15,14,18,0.72);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid rgba(246,241,231,0.08);
+  }
+
+  /* card */
+  .card {
+    background: linear-gradient(180deg, #1C1A20, #19171D);
+    border: 1px solid rgba(246,241,231,0.08);
+  }
+
+  .tracking-tightish { letter-spacing: -0.03em; }
+  .leading-relaxed-body { line-height: 1.7; }
+
+  /* project media treatment */
+  .media-frame { position: relative; overflow: hidden; }
+  .media-frame img {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+    filter: saturate(0.94) contrast(1.02);
+  }
+  .media-frame::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(15,14,18,0.75) 0%, rgba(15,14,18,0.1) 45%, transparent 70%);
+    pointer-events: none;
+  }
+  .media-frame::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(200,90,46,0.35), rgba(15,14,18,0));
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.55;
+    transition: opacity 0.5s ease;
+  }
+  .project-card:hover .media-frame img { transform: scale(1.045); }
+  .project-card:hover .media-frame::before { opacity: 0.25; }
+  .project-card { display: block; transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.5s ease; }
+  .project-card:hover { transform: translateY(-4px); }
+  .project-card:active { transform: translateY(-1px) scale(0.99); }
+  .project-card:focus-visible { outline: 2px solid #D9A24B; outline-offset: 3px; }
+  .visit-arrow { display: inline-block; transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .project-card:hover .visit-arrow { transform: translate(3px, -3px); }
+
+  /* buttons */
+  .btn-primary {
+    background: #C85A2E;
+    color: #0F0E12;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, background 0.25s ease;
+  }
+  .btn-primary:hover { transform: translateY(-2px) scale(1.02); background: #D8693C; }
+  .btn-primary:active { transform: translateY(0) scale(0.98); }
+  .btn-primary:focus-visible { outline: 2px solid #D9A24B; outline-offset: 3px; }
+
+  .btn-ghost {
+    border: 1px solid rgba(246,241,231,0.22);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, background 0.3s ease;
+  }
+  .btn-ghost:hover { border-color: rgba(246,241,231,0.5); background: rgba(246,241,231,0.05); transform: translateY(-2px); }
+  .btn-ghost:active { transform: translateY(0) scale(0.98); }
+  .btn-ghost:focus-visible { outline: 2px solid #D9A24B; outline-offset: 3px; }
+
+  .nav-link { position: relative; }
+  .nav-link::after {
+    content: '';
+    position: absolute; left: 0; bottom: -4px;
+    width: 0%; height: 1px;
+    background: #C85A2E;
+    transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .nav-link:hover::after { width: 100%; }
+  .nav-link:focus-visible { outline: 2px solid #D9A24B; outline-offset: 4px; border-radius: 2px; }
+
+  .skill-chip {
+    border: 1px solid rgba(246,241,231,0.12);
+    background: rgba(246,241,231,0.03);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s ease, background 0.3s ease;
+  }
+  .skill-chip:hover {
+    transform: translateY(-3px);
+    border-color: rgba(200,90,46,0.5);
+    background: rgba(200,90,46,0.08);
+  }
+
+  .contact-link {
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.25s ease;
+  }
+  .contact-link:hover { transform: translateX(4px); color: #E08256; }
+  .contact-link:focus-visible { outline: 2px solid #D9A24B; outline-offset: 4px; }
+
+  /* on-load fade-up */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+  .extra-row {
+    border-top: 1px solid rgba(246,241,231,0.08);
+    transition: background 0.3s ease, padding-left 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .extra-row:hover { background: rgba(246,241,231,0.03); padding-left: 8px; }
+
+  @media (max-width: 640px) {
+    .hero-headline { font-size: 15vw; }
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<svg class="grain" width="100%" height="100%">
+  <filter id="noiseFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+</svg>
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 nav-glass px-6 md:px-10">
+  <div class="max-w-6xl mx-auto h-16 flex items-center justify-between">
+    <a href="#top" class="font-display text-lg tracking-tightish text-paper focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded">
+      {{hero.name}}
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-paper/80">
+      <a href="#skills" class="nav-link hover:text-paper">Skills</a>
+      <a href="#websites" class="nav-link hover:text-paper">Websites</a>
+      <a href="#ux" class="nav-link hover:text-paper">UX</a>
+      <a href="#contact" class="btn-primary px-4 py-2 rounded-full text-sm font-medium">{{hero.cta_primary}}</a>
+    </nav>
+    <a href="#contact" class="md:hidden btn-primary px-4 py-2 rounded-full text-sm font-medium">Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="hero-field relative pt-40 pb-28 md:pt-52 md:pb-36 px-6 md:px-10">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-[1fr,auto] gap-12 md:gap-16 items-center">
+    <div class="order-2 md:order-1">
+    <p class="reveal text-rust font-medium tracking-[0.2em] uppercase text-xs md:text-sm mb-6">
+      {{hero.eyebrow}}
+    </p>
+    <h1 class="reveal hero-headline font-display text-[13vw] md:text-[6.2vw] leading-[0.98] tracking-tightish text-paper max-w-5xl">
+      {{hero.greeting}}<br>
+      <span class="italic text-rust">{{hero.name}}</span>.
+    </h1>
+    <p class="reveal leading-relaxed-body text-paper/70 text-base md:text-lg max-w-2xl mt-8">
+      {{hero.bio}}
+    </p>
+    <div class="reveal flex flex-wrap gap-4 mt-10">
+      <a href="#contact" class="btn-primary px-7 py-3.5 rounded-full font-medium shadow-elevated">{{hero.cta_primary}}</a>
+      <a href="#websites" class="btn-ghost px-7 py-3.5 rounded-full font-medium text-paper">{{hero.cta_secondary}}</a>
+    </div>
+    </div>
+
+    <div class="reveal order-1 md:order-2 relative w-48 h-48 md:w-72 md:h-72 mx-auto md:mx-0 shrink-0">
+      <div class="absolute -inset-4 rounded-full" style="background: radial-gradient(60% 60% at 50% 40%, rgba(200,90,46,0.45), transparent 70%); filter: blur(18px);"></div>
+      <div class="relative w-full h-full rounded-full overflow-hidden shadow-floating ring-1 ring-paper/10">
+        <img src="{{hero.photo}}" alt="Portrait of {{hero.name}}" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section-field px-6 md:px-10 py-24 md:py-32 border-t border-paper/5">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal flex items-end justify-between flex-wrap gap-4 mb-12">
+      <h2 class="font-display text-4xl md:text-5xl tracking-tightish text-paper">Skills &amp; tools</h2>
+      <p class="text-paper/50 text-sm max-w-xs">The stack and software behind the design and build work.</p>
+    </div>
+    <div class="reveal flex flex-wrap gap-3">
+<!--SKILLS_CHIPS-->
+    </div>
+  </div>
+</section>
+
+<!-- WEBSITES -->
+<section id="websites" class="section-field px-6 md:px-10 py-24 md:py-32 border-t border-paper/5">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal mb-14">
+      <p class="text-rust font-medium tracking-[0.2em] uppercase text-xs mb-4">Selected work</p>
+      <h2 class="font-display text-4xl md:text-5xl tracking-tightish text-paper max-w-2xl">Websites</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 md:gap-10">
+<!--WEBSITES_CARDS-->
+    </div>
+
+    <!-- additional work, text list -->
+    <div class="reveal mt-16 md:mt-20">
+      <h3 class="font-display text-2xl text-paper mb-2">More web work</h3>
+      <div class="mt-4">
+<!--MORE_WORK_ROWS-->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UX -->
+<section id="ux" class="section-field px-6 md:px-10 py-24 md:py-32 border-t border-paper/5">
+  <div class="max-w-6xl mx-auto">
+    <div class="reveal mb-14">
+      <p class="text-rust font-medium tracking-[0.2em] uppercase text-xs mb-4">Prototypes</p>
+      <h2 class="font-display text-4xl md:text-5xl tracking-tightish text-paper max-w-2xl">UX design</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 md:gap-10">
+<!--UX_CARDS-->
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="relative px-6 md:px-10 py-28 md:py-40 border-t border-paper/5 overflow-hidden"
+  style="background: radial-gradient(60% 60% at 50% 20%, rgba(200,90,46,0.16), transparent 65%), #0F0E12;">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-[1.2fr,1fr] gap-14 items-end">
+    <div class="reveal">
+      <p class="text-rust font-medium tracking-[0.2em] uppercase text-xs mb-6">Get in touch</p>
+      <h2 class="font-display text-4xl md:text-6xl tracking-tightish text-paper leading-[1.02] max-w-xl">
+        {{contact.heading}}
+      </h2>
+    </div>
+    <div class="reveal flex flex-col gap-5 md:items-end">
+      <a href="mailto:{{contact.email}}" class="contact-link text-paper text-lg md:text-xl font-medium">{{contact.email}}</a>
+      <a href="tel:{{contact.phone_href}}" class="contact-link text-paper/70 text-base">{{contact.phone}}</a>
+      <a href="{{contact.linkedin_url}}" target="_blank" rel="noopener" aria-label="LinkedIn" class="contact-link text-paper/70 inline-flex">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.554V9h3.565v11.452z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="px-6 md:px-10 py-10 border-t border-paper/5">
+  <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 text-sm text-paper/40">
+    <span>&copy; <span id="year"></span> {{hero.name}}</span>
+    <span>Web design &middot; Front-end development &middot; UX</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

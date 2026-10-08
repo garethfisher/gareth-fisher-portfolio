@@ -1,0 +1,42 @@
+{
+  "seo": {
+    "title": "Gareth Fisher — Web & UX Designer",
+    "description": "Gareth Fisher — Web developer, web designer and UX designer with 15+ years experience in responsive web design, front-end development, UX and animation."
+  },
+  "hero": {
+    "eyebrow": "Web Developer · Web Designer · UX Designer",
+    "greeting": "Hi, I'm",
+    "name": "Gareth Fisher",
+    "bio": "With a BSc (Hons) in Interactive Multimedia Design and an MSc in Computing and Design, I'm a creative generalist working across responsive web design and front-end development, alongside UX design, animation and video production. I've worked with businesses of all sizes to create stunning websites and designs that capture their brand's identity.",
+    "cta_primary": "Get in touch",
+    "cta_secondary": "See the work",
+    "photo": "brand_assets/profile.jpg"
+  },
+  "skills": ["HTML", "CSS", "JavaScript", "jQuery", "Webflow", "WordPress", "Bootstrap", "HubSpot", "Perch CMS", "Figma", "Sketch", "Photoshop", "After Effects", "Premiere"],
+  "websites": [
+    { "title": "Higher State Breathwork", "url": "https://www.higherstatebreathwork.com/", "image": "brand_assets/69d69236587f31b61a9c014e_img-hsb.jpg", "type": "Webflow site" },
+    { "title": "Cairn Community Games", "url": "https://www.cairncommunitygames.ie/", "image": "brand_assets/69d6928b3fdfe90ec5735a63_img-cairn.jpg", "type": "Webflow site" },
+    { "title": "Inform Fitness", "url": "https://www.informfitness.com/", "image": "brand_assets/69d69226203874ebb2b4e21a_img-inform.jpg", "type": "Webflow site" },
+    { "title": "Juvelo", "url": "https://www.juvelolife.com/", "image": "brand_assets/6838442b4ea916508a3bf1ba_img-juvelo.jpg", "type": "Webflow site" },
+    { "title": "Fiona Harrold", "url": "https://www.fionaharrold.com/", "image": "brand_assets/6838442c4fa8c3f50e9fc9ce_img-fiona.jpg", "type": "Webflow site" },
+    { "title": "Gorse & Thistle", "url": "https://www.gorseandthistle.com/", "image": "brand_assets/6838442b6db6760245e8356d_img-gorse.jpg", "type": "Webflow site" }
+  ],
+  "more_web_work": [
+    { "title": "Virtually Hebden", "url": "https://www.virtuallyhebdenbridge.com/", "meta": "Webflow site" },
+    { "title": "Mass Fintech Hub", "url": "https://massfintechhub.com/", "meta": "WordPress · HTML, CSS, JS, Bootstrap" },
+    { "title": "Glyphosate Renewal Group", "url": "https://www.glyphosate.eu/", "meta": "WordPress · HTML, CSS, JS, Bootstrap" },
+    { "title": "This May Help", "url": "https://thismayhelp.me/", "meta": "WordPress · HTML, CSS, JS, Bootstrap" },
+    { "title": "Green Inc", "url": "http://www.greeninc.tv/", "meta": "WordPress · Site design, HTML, CSS, jQuery, Bootstrap" },
+    { "title": "One Too Many", "url": "http://onetoomany.co.uk/", "meta": "Brochure site · HTML, CSS, Bootstrap" }
+  ],
+  "ux_projects": [
+    { "title": "Fly UX", "url": "https://www.figma.com/proto/4f0pxO6ILlgouiNDt1UEpD/Prototype---Airline-Mobile---Gareth-Fisher?page-id=0%3A1&type=design&node-id=1-2&viewport=271%2C463%2C1&t=ZBG0kx0ZZVMTlF2D-1&scaling=scale-down&starting-point-node-id=1%3A2", "image": "brand_assets/6626c2d6480d00f806b6570e_img-flyux.jpg", "type": "Prototype mobile airline app · Figma" },
+    { "title": "Klimeo", "url": "https://www.figma.com/proto/jMjaG6aaSmhnZQoCytWPQU/KLI0001-%E2%80%93-Klimeo?page-id=0%3A1&node-id=1-13535&starting-point-node-id=37%3A8288&t=fO2cSnwrLz8aUPXE-1", "image": "brand_assets/69ea8767498c283e640e1116_img-klimeo.jpg", "type": "Prototype sustainability platform · Figma" }
+  ],
+  "contact": {
+    "heading": "If you'd like to work with me, let's talk.",
+    "email": "hello@garethfisher.com",
+    "phone": "+44 7771 815601",
+    "linkedin_url": "https://www.linkedin.com/in/gareth-fisher-0a946341/"
+  }
+}

@@ -1,0 +1,77 @@
+backend:
+  name: github
+  repo: garethfisher/gareth-fisher-portfolio
+  branch: main
+
+media_folder: "brand_assets"
+public_folder: "/brand_assets"
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - name: "site"
+        label: "Site Content"
+        file: "content/site.json"
+        fields:
+          - name: "seo"
+            label: "SEO"
+            widget: "object"
+            fields:
+              - { name: "title", label: "Page Title", widget: "string" }
+              - { name: "description", label: "Meta Description", widget: "text" }
+
+          - name: "hero"
+            label: "Hero Section"
+            widget: "object"
+            fields:
+              - { name: "eyebrow", label: "Eyebrow (role line)", widget: "string" }
+              - { name: "greeting", label: "Greeting", widget: "string" }
+              - { name: "name", label: "Name (accent word)", widget: "string" }
+              - { name: "bio", label: "Bio paragraph", widget: "text" }
+              - { name: "cta_primary", label: "Primary button label", widget: "string" }
+              - { name: "cta_secondary", label: "Secondary button label", widget: "string" }
+              - { name: "photo", label: "Profile photo", widget: "image" }
+
+          - name: "skills"
+            label: "Skills"
+            widget: "list"
+            field: { name: "skill", label: "Skill", widget: "string" }
+
+          - name: "websites"
+            label: "Featured Websites"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "url", label: "URL", widget: "string" }
+              - { name: "image", label: "Image", widget: "image" }
+              - { name: "type", label: "Type / stack", widget: "string" }
+
+          - name: "more_web_work"
+            label: "More Web Work"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "url", label: "URL", widget: "string" }
+              - { name: "meta", label: "Meta / stack", widget: "string" }
+
+          - name: "ux_projects"
+            label: "UX Projects"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "url", label: "URL", widget: "string" }
+              - { name: "image", label: "Image", widget: "image" }
+              - { name: "type", label: "Type", widget: "string" }
+
+          - name: "contact"
+            label: "Contact"
+            widget: "object"
+            fields:
+              - { name: "heading", label: "Heading", widget: "string" }
+              - { name: "email", label: "Email", widget: "string" }
+              - { name: "phone", label: "Phone (display)", widget: "string" }
+              - { name: "linkedin_url", label: "LinkedIn URL", widget: "string" }
