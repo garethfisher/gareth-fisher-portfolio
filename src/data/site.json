@@ -6,7 +6,7 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Gareth Fisher",
-    "bio": "With a BSc (Hons) in Interactive Multimedia Design and an MSc in Computing and Design, I'm a creative generalist working across responsive web design and front-end development, alongside UX design, animation and video production. I've worked with businesses of all sizes to create stunning websites and designs that capture their brand's identity.",
+    "bio": "With a BSc (Hons) in Interactive Multimedia Design and an MSc in Computing and Design, I'm a creative person working in responsive web design and front-end development, alongside UX design, animation and video production. I've worked with businesses of all sizes to create stunning websites and designs that capture their brand's identity.",
     "cta_primary": "Get in touch",
     "cta_secondary": "See my work",
     "photo": "/brand_assets/profile.jpg"
@@ -16,13 +16,14 @@
     "CSS",
     "JavaScript",
     "jQuery",
+    "Claude Code",
     "Webflow",
     "WordPress",
-    "Bootstrap",
+    "Github",
+    "SEO Optimisation",
     "HubSpot",
     "Perch CMS",
     "Figma",
-    "Sketch",
     "Photoshop",
     "After Effects",
     "Premiere"
