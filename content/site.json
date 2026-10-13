@@ -4,12 +4,11 @@
     "description": "Gareth Fisher — Web developer, web designer and UX designer with 15+ years experience in responsive web design, front-end development, UX and animation."
   },
   "hero": {
-    "eyebrow": "Web Developer · Web Designer · UX Designer",
     "greeting": "Hi, I'm",
     "name": "Gareth Fisher",
     "bio": "With a BSc (Hons) in Interactive Multimedia Design and an MSc in Computing and Design, I'm a creative generalist working across responsive web design and front-end development, alongside UX design, animation and video production. I've worked with businesses of all sizes to create stunning websites and designs that capture their brand's identity.",
     "cta_primary": "Get in touch",
-    "cta_secondary": "See the work",
+    "cta_secondary": "See my work",
     "photo": "brand_assets/profile.jpg"
   },
   "skills": [
