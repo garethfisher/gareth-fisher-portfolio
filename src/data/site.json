@@ -9,7 +9,7 @@
     "bio": "With a BSc (Hons) in Interactive Multimedia Design and an MSc in Computing and Design, I'm a creative generalist working across responsive web design and front-end development, alongside UX design, animation and video production. I've worked with businesses of all sizes to create stunning websites and designs that capture their brand's identity.",
     "cta_primary": "Get in touch",
     "cta_secondary": "See my work",
-    "photo": "brand_assets/profile.jpg"
+    "photo": "/brand_assets/profile.jpg"
   },
   "skills": [
     "HTML",
@@ -31,37 +31,37 @@
     {
       "title": "Higher State Breathwork",
       "url": "https://www.higherstatebreathwork.com/",
-      "image": "brand_assets/69d69236587f31b61a9c014e_img-hsb.jpg",
+      "image": "/brand_assets/69d69236587f31b61a9c014e_img-hsb.jpg",
       "type": "Webflow site"
     },
     {
       "title": "Cairn Community Games",
       "url": "https://www.cairncommunitygames.ie/",
-      "image": "brand_assets/69d6928b3fdfe90ec5735a63_img-cairn.jpg",
+      "image": "/brand_assets/69d6928b3fdfe90ec5735a63_img-cairn.jpg",
       "type": "Webflow site"
     },
     {
       "title": "Inform Fitness",
       "url": "https://www.informfitness.com/",
-      "image": "brand_assets/69d69226203874ebb2b4e21a_img-inform.jpg",
+      "image": "/brand_assets/69d69226203874ebb2b4e21a_img-inform.jpg",
       "type": "Webflow site"
     },
     {
       "title": "Juvelo",
       "url": "https://www.juvelolife.com/",
-      "image": "brand_assets/6838442b4ea916508a3bf1ba_img-juvelo.jpg",
+      "image": "/brand_assets/6838442b4ea916508a3bf1ba_img-juvelo.jpg",
       "type": "Webflow site"
     },
     {
       "title": "Fiona Harrold",
       "url": "https://www.fionaharrold.com/",
-      "image": "brand_assets/6838442c4fa8c3f50e9fc9ce_img-fiona.jpg",
+      "image": "/brand_assets/6838442c4fa8c3f50e9fc9ce_img-fiona.jpg",
       "type": "Webflow site"
     },
     {
       "title": "Gorse & Thistle",
       "url": "https://www.gorseandthistle.com/",
-      "image": "brand_assets/6838442b6db6760245e8356d_img-gorse.jpg",
+      "image": "/brand_assets/6838442b6db6760245e8356d_img-gorse.jpg",
       "type": "Webflow site"
     }
   ],
@@ -96,13 +96,13 @@
     {
       "title": "Fly UX",
       "url": "https://www.figma.com/proto/4f0pxO6ILlgouiNDt1UEpD/Prototype---Airline-Mobile---Gareth-Fisher?page-id=0%3A1&type=design&node-id=1-2&viewport=271%2C463%2C1&t=ZBG0kx0ZZVMTlF2D-1&scaling=scale-down&starting-point-node-id=1%3A2",
-      "image": "brand_assets/6626c2d6480d00f806b6570e_img-flyux.jpg",
+      "image": "/brand_assets/6626c2d6480d00f806b6570e_img-flyux.jpg",
       "type": "Prototype mobile airline app · Figma"
     },
     {
       "title": "Klimeo",
       "url": "https://www.figma.com/proto/jMjaG6aaSmhnZQoCytWPQU/KLI0001-%E2%80%93-Klimeo?page-id=0%3A1&node-id=1-13535&starting-point-node-id=37%3A8288&t=fO2cSnwrLz8aUPXE-1",
-      "image": "brand_assets/69ea8767498c283e640e1116_img-klimeo.jpg",
+      "image": "/brand_assets/69ea8767498c283e640e1116_img-klimeo.jpg",
       "type": "Prototype sustainability platform · Figma"
     }
   ],
